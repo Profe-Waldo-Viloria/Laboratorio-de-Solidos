@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>XR FUSION REVOLUTION LAB · Fase 4</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/responsive.css"></head><body>
+<header><h1>XR FUSION <b>REVOLUTION LAB</b></h1><span>Fase 4 · gestos y realidad aumentada</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button></header>
+<div id="app">
+<aside class="pn"><input id="q" placeholder="Buscar curva…" aria-label="Buscar curva"><div id="cat"></div></aside>
+<main id="ctr">
+<section class="pn vw"><div class="tag">Plano cartesiano · región generatriz</div><canvas id="c2"></canvas></section>
+<section class="pn vw"><div class="tag">Modelo 3D · arrastra para rotar, rueda para zoom</div><div id="c3"></div></section>
+<section class="pn"><div id="ctl"></div></section>
+</main>
+<aside class="pn" id="inf"></aside>
+<div id="camw" hidden><div class="cw"><video id="gv" playsinline muted></video><canvas id="gc"></canvas></div><div id="gs"></div></div><div id="cur"></div>
+<div id="lr" hidden><div class="mdl"><button class="b" id="lx">✕ Cerrar</button><h2>Aprende y experimenta</h2><div id="lc"></div></div></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/app.js"></script>
+<script src="js/augmented-reality.js"></script>
+<script src="js/gestures.js"></script></body></html>
