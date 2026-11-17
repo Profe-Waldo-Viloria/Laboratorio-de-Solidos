@@ -4,7 +4,19 @@
 <title>RevoluMathh · Laboratorio de sólidos de revolución</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("rm-theme")||"dark"}catch(e){}</script>
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/responsive.css"></head><body>
+<link rel="stylesheet" href="css/responsive.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/cover.css">
+</head><body>
+<section id="cover" aria-label="Portada de RevoluMathh"><canvas id="cv"></canvas><div class="cin">
+<div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#5eead4" stroke-width="2" aria-hidden="true"><ellipse cx="17" cy="17" rx="14" ry="6"/><ellipse cx="17" cy="17" rx="14" ry="6" transform="rotate(60 17 17)" stroke="#a3e635"/><circle cx="17" cy="17" r="2.5" fill="#5eead4"/></svg><span>Revolu<b>Mathh</b></span></div>
+<div class="kick">Cuaderno digital · Sólidos de revolución</div>
+<h2>Gira una curva.<br><em>Mira nacer el sólido.</em></h2>
+<p class="cdesc">Un laboratorio interactivo para explorar curvas, superficies y sólidos de revolución, y calcular su volumen con integrales.</p>
+<div class="chips"><span><b>01</b>Curvas</span><span><b>02</b>Revolución</span><span><b>03</b>Volumen</span><span><b>04</b>Gestos y AR</span></div>
+<button id="go">Entrar al laboratorio ↗</button>
+<div class="foot">EXPLORA · GIRA · OBSERVA · CALCULA</div></div></section>
 <header><h1>Revolu<b>Mathh</b></h1><span>Laboratorio de sólidos de revolución</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button><button class="b" id="tb">☀️ Modo día</button></header>
 <div id="app">
 <aside class="pn"><input id="q" placeholder="Buscar curva…" aria-label="Buscar curva"><div id="cat"></div></aside>
@@ -21,4 +33,5 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="js/app.js"></script>
 <script src="js/augmented-reality.js"></script>
-<script src="js/gestures.js"></script></body></html>
+<script src="js/gestures.js"></script>
+<script src="js/cover.js"></script></body></html>

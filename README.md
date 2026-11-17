@@ -17,8 +17,8 @@ Laboratorio web para explorar cómo curvas y regiones del plano generan superfic
 ```
 RevoluMathh/
 ├── index.html
-├── css/        styles.css, responsive.css
-├── js/         app.js (curvas, cálculo, 2D, 3D, interfaz), augmented-reality.js, gestures.js
+├── css/        styles.css, responsive.css, cover.css
+├── js/         app.js (curvas, cálculo, 2D, 3D, interfaz), augmented-reality.js, gestures.js, cover.js
 └── assets/     images/, icons/
 ```
 
@@ -63,6 +63,10 @@ Muestra el modelo 3D sobre la imagen de tu cámara. Es una **superposición visu
 - El método lo fija el eje: sobre X, discos o arandelas (si c > 0); sobre Y, capas cilíndricas.
 
 - Se retiraron las espirales y la hélice circular: no son gráficas de funciones ni delimitan una región cerrada.
+
+## Portada
+
+Al abrir la página aparece una portada con una animación de revolución; el botón **Entrar al laboratorio** (o la tecla Enter) abre la aplicación. Usa las fuentes Bricolage Grotesque y Space Mono de Google Fonts; si no cargan, se usan fuentes del sistema.
 
 ## Dependencias (por CDN, fijadas a versión)
 
