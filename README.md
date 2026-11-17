@@ -1,20 +1,21 @@
-# XR FUSION REVOLUTION LAB
+# RevoluMathh
 
 Laboratorio web para explorar cómo curvas y regiones del plano generan superficies y sólidos de revolución, y cómo se calcula su volumen con integrales. No usa base de datos ni servicios de pago.
 
 ## Qué incluye
 
-- Catálogo de 18 curvas con buscador. Cada una indica si admite **sólido**, **superficie** o ambos.
+- Catálogo de 15 curvas con buscador. Cada una indica si admite **sólido**, **superficie** o ambos.
 - Gráfica 2D con región generatriz y eje de rotación; modelo 3D construido con las fórmulas de revolución (no hay modelos prediseñados).
 - Eje X o Y, animación progresiva, cortes transversales, malla, opacidad y generatriz.
 - Volumen por discos, arandelas o capas cilíndricas, con desarrollo paso a paso y verificación contra el volumen de la malla 3D.
 - Módulo «Aprende y experimenta» con explicaciones, ejemplos y ejercicios.
 - Control gestual (MediaPipe) y modo AR de superposición visual. Ambos son opcionales.
+- Modo día y modo noche (recuerda tu elección).
 
 ## Estructura
 
 ```
-XR-FUSION-REVOLUTION-LAB/
+RevoluMathh/
 ├── index.html
 ├── css/        styles.css, responsive.css
 ├── js/         app.js (curvas, cálculo, 2D, 3D, interfaz), augmented-reality.js, gestures.js
@@ -23,9 +24,9 @@ XR-FUSION-REVOLUTION-LAB/
 
 ## Ejecutar en XAMPP
 
-1. Copia la carpeta `XR-FUSION-REVOLUTION-LAB` dentro de `htdocs`.
+1. Copia la carpeta `RevoluMathh` dentro de `htdocs`.
 2. Inicia Apache desde el panel de XAMPP.
-3. Abre `http://localhost/XR-FUSION-REVOLUTION-LAB/`.
+3. Abre `http://localhost/RevoluMathh/`.
 
 No abras `index.html` con doble clic (`file://`): el navegador bloquea la cámara y MediaPipe.
 
@@ -43,7 +44,7 @@ Al pulsar **Control gestual** o **Modo AR** el navegador pedirá permiso. El vid
 
 | Gesto | Acción |
 |---|---|
-| Palma abierta en movimiento | Rotar el modelo |
+| Palma abierta en movimiento | Rotar el modelo (ajusta la sensibilidad con el control de la ventana de cámara) |
 | Índice levantado | Mover el cursor verde; mantenerlo ~1 s sobre un botón lo pulsa |
 | Pinza pulgar-índice | Controlar el ángulo de revolución moviendo la mano a izquierda/derecha |
 | Dos manos separándose o juntándose | Acercar o alejar la cámara |
@@ -60,6 +61,8 @@ Muestra el modelo 3D sobre la imagen de tu cámara. Es una **superposición visu
 - Una curva sola genera una **superficie**; el **sólido** exige una región cerrada. Cuando la curva no es una gráfica con x creciente, queda sobre la base y = c y (x ≥ 0 si giras sobre Y), la app avisa y muestra solo la superficie.
 - Los volúmenes son **aproximaciones numéricas** (Simpson para funciones y = f(x); trapecio para curvas paramétricas). No se muestran primitivas exactas.
 - El método lo fija el eje: sobre X, discos o arandelas (si c > 0); sobre Y, capas cilíndricas.
+
+- Se retiraron las espirales y la hélice circular: no son gráficas de funciones ni delimitan una región cerrada.
 
 ## Dependencias (por CDN, fijadas a versión)
 

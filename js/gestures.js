@@ -18,18 +18,18 @@ function gesture(h){
  if(d(4,8)/sz<.2)return 'pinza';
  if(n===4)return 'palma abierta';if(n===1&&ext[0])return 'índice';if(n===0)return 'puño';return 'otro'}
 function orbit(dx,dy){const o=cam.position.clone().sub(ctl.target),s=new THREE.Spherical().setFromVector3(o);
- s.theta+=dx*4;s.phi=Math.min(3,Math.max(.15,s.phi+dy*3));cam.position.copy(ctl.target).add(o.setFromSpherical(s))}
+ const k=+$('gsn').value;s.theta+=dx*1.5*k;s.phi=Math.min(3,Math.max(.15,s.phi+dy*1.2*k));cam.position.copy(ctl.target).add(o.setFromSpherical(s))}
 function zoom(k){const o=cam.position.clone().sub(ctl.target);
- cam.position.copy(ctl.target).add(o.setLength(Math.min(80,Math.max(1,o.length()*Math.min(1.1,Math.max(.9,k))))))}
+ cam.position.copy(ctl.target).add(o.setLength(Math.min(80,Math.max(1,o.length()*Math.min(1.04,Math.max(.96,k))))))}
 function point(tip,now){
  const x=(1-tip.x)*innerWidth,y=tip.y*innerHeight,c=$('cur');c.style.cssText=`display:block;left:${x}px;top:${y}px`;
  const el=document.elementFromPoint(x,y)?.closest('button,select,.it,input[type=checkbox]');
  if(el&&el===dw.el){if(now-dw.t>900&&now>cool){cool=now+1200;dw.t=now;el.click()}}else dw={el,t:now}}
 function act(G,h){
  const p=h[9],now=performance.now();
- if(G==='palma abierta'){if(prevP&&cam)orbit(p.x-prevP.x,p.y-prevP.y);prevP={x:p.x,y:p.y};return}
+ if(G==='palma abierta'){const q=prevP?{x:prevP.x+(p.x-prevP.x)*.3,y:prevP.y+(p.y-prevP.y)*.3}:{x:p.x,y:p.y};if(prevP&&cam){const dx=q.x-prevP.x,dy=q.y-prevP.y;if(Math.hypot(dx,dy)>.0015)orbit(dx,dy)}prevP=q;return}
  prevP=null;
- if(G==='pinza'){ang=Math.min(1,Math.max(0,(1-h[8].x-.15)/.7))*360;play=false;$('an').value=ang;$('anv').textContent=Math.round(ang)+'°';$('pl').textContent='▶ Iniciar';build3D()}
+ if(G==='pinza'){ang+=(Math.min(1,Math.max(0,(1-h[8].x-.15)/.7))*360-ang)*.25;play=false;$('an').value=ang;$('anv').textContent=Math.round(ang)+'°';$('pl').textContent='▶ Iniciar';build3D()}
  else if(G==='puño'&&now>cool){cool=now+1500;build3D(true)}
  else if(G==='índice')point(h[8],now)}
 function gLoop(){

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>XR FUSION REVOLUTION LAB · Fase 4</title>
+<title>RevoluMathh · Laboratorio de sólidos de revolución</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("rm-theme")||"dark"}catch(e){}</script>
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/responsive.css"></head><body>
-<header><h1>XR FUSION <b>REVOLUTION LAB</b></h1><span>Fase 4 · gestos y realidad aumentada</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button></header>
+<header><h1>Revolu<b>Mathh</b></h1><span>Laboratorio de sólidos de revolución</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button><button class="b" id="tb">☀️ Modo día</button></header>
 <div id="app">
 <aside class="pn"><input id="q" placeholder="Buscar curva…" aria-label="Buscar curva"><div id="cat"></div></aside>
 <main id="ctr">
@@ -13,7 +14,7 @@
 <section class="pn"><div id="ctl"></div></section>
 </main>
 <aside class="pn" id="inf"></aside>
-<div id="camw" hidden><div class="cw"><video id="gv" playsinline muted></video><canvas id="gc"></canvas></div><div id="gs"></div></div><div id="cur"></div>
+<div id="camw" hidden><div class="cw"><video id="gv" playsinline muted></video><canvas id="gc"></canvas></div><div id="gs"></div><div class="row" style="padding:0 8px 6px"><label style="width:auto">Sensibilidad</label><input type="range" id="gsn" min=".3" max="2" step=".1" value="1"></div></div><div id="cur"></div>
 <div id="lr" hidden><div class="mdl"><button class="b" id="lx">✕ Cerrar</button><h2>Aprende y experimenta</h2><div id="lc"></div></div></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
