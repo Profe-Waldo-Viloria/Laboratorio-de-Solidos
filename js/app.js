@@ -57,8 +57,8 @@ function revolve(pr,axis,th,M){const N=pr.length,pos=[],idx=[];
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g}
 // ---- Gráfica 2D ----
 function draw2D(){
- const cv=$('c2'),r=cv.getBoundingClientRect(),d=devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;
- const g=cv.getContext('2d');g.setTransform(d,0,0,d,0,0);const W=r.width,H=r.height;g.clearRect(0,0,W,H);g.font='12px system-ui';const th=thm();
+ const cv=$('c2'),r=cv.getBoundingClientRect(),d=devicePixelRatio||1;if(!r.width||!r.height)return;cv.width=r.width*d;cv.height=r.height*d;
+ const g=cv.getContext('2d');g.setTransform(d,0,0,d,0,0);const W=r.width,H=r.height;g.clearRect(0,0,W,H);g.font='12px "JetBrains Mono",monospace';const th=thm();
  if(!cur.ok){g.fillStyle=th.mu;g.fillText('Vista 2D disponible en la Fase 2',16,40);return}
  const{a,b,c,axis}=S,pts=[];let ys=[0,c],xs=[0];
  samp(160).forEach(q=>{if(isFinite(q.x)&&isFinite(q.y)){pts.push([q.x,q.y]);ys.push(q.y);xs.push(q.x)}});
@@ -84,7 +84,7 @@ function init3D(){
  (function loop(t){requestAnimationFrame(loop);
   if(play){ang=Math.min(360,ang+speed*60*(t-(loop.l||t))/1000);$('an').value=ang;$('anv').textContent=Math.round(ang)+'°';if(ang>=360){play=false;$('pl').textContent='▶ Iniciar'}build3D()}
   loop.l=t;ctl.update();R.render(scene,cam)})(0)}
-function resize(){if(!R)return;const e=$('c3');R.setSize(e.clientWidth,e.clientHeight);cam.aspect=e.clientWidth/e.clientHeight;cam.updateProjectionMatrix();draw2D()}
+function resize(){if(!R)return;if(!$('c3').clientHeight){draw2D();return}const e=$('c3');R.setSize(e.clientWidth,e.clientHeight);cam.aspect=e.clientWidth/e.clientHeight;cam.updateProjectionMatrix();draw2D()}
 function build3D(fit){
  if(!R)return;if(mesh){scene.remove(mesh);mesh.geometry.dispose();mesh=null}if(prof){scene.remove(prof);prof=null}if(hel){scene.remove(hel);hel=null}if(cap){scene.remove(cap);cap=null}
  if(err||!cur.ok)return;const pr=profile(),th=ang*Math.PI/180;
@@ -122,7 +122,7 @@ function info(){
    <p>Integración numérica (${cur.g?'regla del trapecio con 4.000 puntos de la curva, x(t) creciente':'regla de Simpson, n = 2.000'}). No se presenta primitiva exacta: el resultado es una aproximación.</p>
    <div class="res">V ≈ ${F(V)} u³</div><small>= ${F(V/Math.PI)}·π u³</small>${chk(V)}`}}
  else h+=`<p class="mu">Esta curva ya está en el catálogo, pero su construcción 3D llega en la siguiente fase.</p>`;
- $('inf').innerHTML=h}
+ $('infc').innerHTML=h}
 function cutIt(pr){R.localClippingEnabled=true;if(!$('cut').checked)return;
  const ax=S.axis==='x'?0:1,v=pr.map(p=>p[ax]),lo=Math.min(...v),hi=Math.max(...v),s=lo+(hi-lo)*$('cs').value/100;
  mesh.material.clippingPlanes=[new THREE.Plane(new THREE.Vector3(ax?0:-1,ax?-1:0,0),s)];

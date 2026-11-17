@@ -17,8 +17,8 @@ Laboratorio web para explorar cómo curvas y regiones del plano generan superfic
 ```
 RevoluMathh/
 ├── index.html
-├── css/        styles.css, responsive.css, cover.css
-├── js/         app.js (curvas, cálculo, 2D, 3D, interfaz), augmented-reality.js, gestures.js, cover.js
+├── css/        styles.css, responsive.css, cover.css, typography.css, panels.css
+├── js/         app.js (curvas, cálculo, 2D, 3D, interfaz), augmented-reality.js, gestures.js, cover.js, interface.js
 └── assets/     images/, icons/
 ```
 
@@ -64,9 +64,17 @@ Muestra el modelo 3D sobre la imagen de tu cámara. Es una **superposición visu
 
 - Se retiraron las espirales y la hélice circular: no son gráficas de funciones ni delimitan una región cerrada.
 
+## Creadores
+
+RevoluMathh fue creado por Waldo Viloria y Carlos Cortés, licenciados en matemáticas, para estudiantes de educación media y de nivel universitario. Su información está en el botón **Creadores**.
+
+## Interfaz
+
+Cada panel (catálogo, gráfica 2D, modelo 3D, controles e información) se puede plegar con su botón. En teléfono el catálogo empieza plegado y se pliega solo al elegir una curva.
+
 ## Portada
 
-Al abrir la página aparece una portada con una animación de revolución; el botón **Entrar al laboratorio** (o la tecla Enter) abre la aplicación. Usa las fuentes Bricolage Grotesque y Space Mono de Google Fonts; si no cargan, se usan fuentes del sistema.
+Al abrir la página aparece una portada con una animación de revolución; el botón **Entrar al laboratorio** (o la tecla Enter) abre la aplicación. Usa las fuentes Fraunces, Space Grotesk, STIX Two Text y JetBrains Mono de Google Fonts; si no cargan, se usan fuentes del sistema.
 
 ## Dependencias (por CDN, fijadas a versión)
 

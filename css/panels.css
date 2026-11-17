@@ -1,0 +1,18 @@
+.pl{position:relative}
+.tg{width:28px;height:28px;border-radius:7px;border:1px solid var(--ln);background:var(--sf);color:var(--tx);cursor:pointer;font-size:16px;line-height:1;z-index:5}
+.pn.vw>.tg{position:absolute;top:6px;right:8px}.pn:not(.vw)>.tg{position:sticky;top:0;float:right}
+.pn>.tt{display:none;font:600 13px var(--f-ui);color:var(--cy);letter-spacing:.04em}
+.pn.col>*:not(.tg):not(.tt){display:none}.pn.col>.tt{display:block}.pn.col{min-height:0;overflow:hidden}
+.pn.vw.col{height:42px}.pn.vw.col>.tt{position:absolute;left:12px;top:11px}#ctr>.pn.col:not(.vw){padding:8px 12px}
+.pn.side.col{padding:8px 6px;text-align:center}.pn.side.col>.tg{float:none;display:block;margin:0 auto 10px}.pn.side.col>.tt{writing-mode:vertical-rl;transform:rotate(180deg);margin:0 auto}
+#app.colL{grid-template-columns:48px 1fr 330px}#app.colR{grid-template-columns:250px 1fr 48px}#app.colL.colR{grid-template-columns:48px 1fr 48px}
+#ctr.k2{--r2:auto}#ctr.k3{--r3:auto}
+#cr{position:fixed;inset:0;background:rgba(0,5,20,.85);z-index:70;display:flex;justify-content:center;padding:12px;overflow:auto}#cr[hidden]{display:none}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:14px 0}
+.team figure{margin:0;text-align:center;padding:16px;border:1px solid var(--ln);border-radius:14px;background:var(--bg)}
+.team img{width:140px;height:140px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:3px solid var(--cy);box-shadow:0 0 24px rgba(34,211,238,.3)}
+.team b{display:block;margin-top:10px;font:700 21px var(--f-disp)}.team span{color:var(--mu);font-size:13px}
+@media(max-width:1000px){#app.colL,#app.colR,#app.colL.colR{grid-template-columns:1fr}#app>aside:first-child{max-height:260px}
+ .pn.side.col>.tt{writing-mode:horizontal-tb;transform:none}.pn.side.col>.tg{float:right;margin:0}.pn.side.col{padding:8px 12px;text-align:left}}
+@media(max-width:600px){header span{display:none}header h1{font-size:19px}header .b{padding:8px 10px;font-size:12px}#camw{width:150px;right:8px;bottom:8px}.cin::before{inset:-30px -16px}}
+@media(pointer:coarse){button.b,select,.it{min-height:42px}}

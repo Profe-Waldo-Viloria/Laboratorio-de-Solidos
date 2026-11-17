@@ -13,7 +13,7 @@
   t+=.006;if(!still)raf=requestAnimationFrame(draw)}
  function close(){cv.classList.add('out');cancelAnimationFrame(raf);lock(false);setTimeout(()=>{cv.hidden=true;if(typeof resize==='function')resize()},650)}
  go.onclick=close;
- addEventListener('keydown',e=>{if(e.key==='Enter'&&!cv.hidden&&!cv.classList.contains('out'))close()});
+ addEventListener('keydown',e=>{if(e.key==='Enter'&&!cv.hidden&&!cv.classList.contains('out')&&document.getElementById('cr').hidden)close()});
  if(still)addEventListener('resize',draw);
  lock(true);draw();go.focus({preventScroll:true});
 })();

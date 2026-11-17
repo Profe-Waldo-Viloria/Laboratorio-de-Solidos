@@ -6,18 +6,20 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/responsive.css"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Space+Grotesk:wght@400..700&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/cover.css">
+<link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/panels.css">
 </head><body>
 <section id="cover" aria-label="Portada de RevoluMathh"><canvas id="cv"></canvas><div class="cin">
 <div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#5eead4" stroke-width="2" aria-hidden="true"><ellipse cx="17" cy="17" rx="14" ry="6"/><ellipse cx="17" cy="17" rx="14" ry="6" transform="rotate(60 17 17)" stroke="#a3e635"/><circle cx="17" cy="17" r="2.5" fill="#5eead4"/></svg><span>Revolu<b>Mathh</b></span></div>
 <div class="kick">Cuaderno digital · Sólidos de revolución</div>
 <h2>Gira una curva.<br><em>Mira nacer el sólido.</em></h2>
-<p class="cdesc">Un laboratorio interactivo para explorar curvas, superficies y sólidos de revolución, y calcular su volumen con integrales.</p>
+<p class="cdesc">Un laboratorio interactivo para explorar curvas, superficies y sólidos de revolución, y calcular su volumen con integrales. Pensado para educación media y nivel universitario.</p>
 <div class="chips"><span><b>01</b>Curvas</span><span><b>02</b>Revolución</span><span><b>03</b>Volumen</span><span><b>04</b>Gestos y AR</span></div>
-<button id="go">Entrar al laboratorio ↗</button>
-<div class="foot">EXPLORA · GIRA · OBSERVA · CALCULA</div></div></section>
-<header><h1>Revolu<b>Mathh</b></h1><span>Laboratorio de sólidos de revolución</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button><button class="b" id="tb">☀️ Modo día</button></header>
+<button id="go">Entrar al laboratorio ↗</button><button class="lnk" id="cbc">Conoce a los creadores</button>
+<div class="foot">EXPLORA · GIRA · OBSERVA · CALCULA</div><div class="by">Creado por Waldo Viloria y Carlos Cortés · Licenciados en Matemáticas</div></div></section>
+<header><h1>Revolu<b>Mathh</b></h1><span>Laboratorio de sólidos de revolución</span><button class="b" id="lb" style="margin-left:auto">📘 Aprende y experimenta</button><button class="b" id="gb">🖐 Control gestual</button><button class="b" id="ab">🕶 Modo AR</button><button class="b" id="cb">👥 Creadores</button><button class="b" id="tb">☀️ Modo día</button></header>
 <div id="app">
 <aside class="pn"><input id="q" placeholder="Buscar curva…" aria-label="Buscar curva"><div id="cat"></div></aside>
 <main id="ctr">
@@ -25,8 +27,13 @@
 <section class="pn vw"><div class="tag">Modelo 3D · arrastra para rotar, rueda para zoom</div><div id="c3"></div></section>
 <section class="pn"><div id="ctl"></div></section>
 </main>
-<aside class="pn" id="inf"></aside>
+<aside class="pn" id="inf"><div id="infc"></div></aside>
 <div id="camw" hidden><div class="cw"><video id="gv" playsinline muted></video><canvas id="gc"></canvas></div><div id="gs"></div><div class="row" style="padding:0 8px 6px"><label style="width:auto">Sensibilidad</label><input type="range" id="gsn" min=".3" max="2" step=".1" value="1"></div></div><div id="cur"></div>
+<div id="cr" hidden role="dialog" aria-modal="true" aria-label="Creadores"><div class="mdl"><button class="b" id="crx">✕ Cerrar</button><h2>Creadores</h2>
+<div class="team"><figure><img src="assets/images/foto-1.jpg" alt="Retrato de Waldo Viloria"><b>Waldo Viloria</b><span>Licenciado en Matemáticas</span></figure>
+<figure><img src="assets/images/foto-2.jpg" alt="Retrato de Carlos Cortés"><b>Carlos Cortés</b><span>Licenciado en Matemáticas</span></figure></div>
+<p>RevoluMathh es un laboratorio para ver cómo una curva o una región del plano gira y genera una superficie o un sólido, y cómo se calcula su volumen con integrales.</p>
+<h3>¿Para quién es?</h3><p>Para estudiantes de <b>educación media</b> y de <b>nivel universitario</b> que quieren comprender el cálculo experimentando.</p></div></div>
 <div id="lr" hidden><div class="mdl"><button class="b" id="lx">✕ Cerrar</button><h2>Aprende y experimenta</h2><div id="lc"></div></div></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -34,4 +41,5 @@
 <script src="js/app.js"></script>
 <script src="js/augmented-reality.js"></script>
 <script src="js/gestures.js"></script>
+<script src="js/interface.js"></script>
 <script src="js/cover.js"></script></body></html>
